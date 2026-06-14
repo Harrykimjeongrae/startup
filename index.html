@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>임재혁과 얼굴들 | 의료기기 글로벌 유통 연결</title>
+  <style>
+    :root {
+      --navy: #0d1f3c;
+      --navy-mid: #1a3a6b;
+      --blue: #1e5fc2;
+      --blue-light: #3b82f6;
+      --accent: #0ea5e9;
+      --white: #ffffff;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-300: #cbd5e1;
+      --gray-500: #64748b;
+      --gray-700: #334155;
+      --gray-900: #0f172a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Pretendard', 'Apple SD Gothic Neo', -apple-system, sans-serif;
+      color: var(--gray-900);
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(13, 31, 60, 0.97);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: 68px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .logo {
+      color: var(--white);
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .logo span { color: var(--accent); }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      background: var(--blue);
+      color: var(--white) !important;
+      padding: 0.45rem 1.1rem;
+      border-radius: 6px;
+      font-weight: 600 !important;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #0f3460 100%);
+      display: flex;
+      align-items: center;
+      padding: 68px 5% 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(30,95,194,0.25) 0%, transparent 70%);
+      top: 10%; right: -100px;
+      border-radius: 50%;
+    }
+    .hero-content {
+      max-width: 720px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(14,165,233,0.15);
+      border: 1px solid rgba(14,165,233,0.35);
+      color: var(--accent);
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      margin-bottom: 1.8rem;
+    }
+    .hero h1 {
+      color: var(--white);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.4rem;
+    }
+    .hero h1 em { font-style: normal; color: var(--accent); }
+    .hero p {
+      color: rgba(255,255,255,0.72);
+      font-size: 1.1rem;
+      max-width: 580px;
+      margin-bottom: 2.4rem;
+      line-height: 1.75;
+    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+      padding: 0.85rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--blue-light); transform: translateY(-1px); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      padding: 0.85rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      border: 1.5px solid rgba(255,255,255,0.35);
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--white); background: rgba(255,255,255,0.07); }
+
+    /* STATS */
+    .stats {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .stats-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 5%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+    .stat-item strong {
+      display: block;
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--blue);
+      letter-spacing: -0.03em;
+    }
+    .stat-item span {
+      color: var(--gray-500);
+      font-size: 0.9rem;
+      margin-top: 0.3rem;
+      display: block;
+    }
+
+    /* SECTION COMMONS */
+    section { padding: 6rem 5%; }
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--blue);
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+    h2 {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.25;
+      color: var(--gray-900);
+      margin-bottom: 1rem;
+    }
+    .section-desc {
+      color: var(--gray-500);
+      font-size: 1.05rem;
+      max-width: 580px;
+      line-height: 1.75;
+      margin-bottom: 0.5rem;
+    }
+    .inner { max-width: 1100px; margin: 0 auto; }
+
+    /* SVG icon helpers */
+    .icon-wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* MISSION */
+    .mission { background: var(--gray-50); }
+    .mission-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .mission-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 2.5rem;
+      border: 1px solid var(--gray-100);
+    }
+    .mission-card .m-icon {
+      width: 52px; height: 52px;
+      background: #e0effe;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .mission-card h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+      color: var(--navy);
+    }
+    .mission-card p { color: var(--gray-500); font-size: 0.95rem; line-height: 1.75; }
+
+    /* PROBLEM */
+    .problem { background: var(--white); }
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .problem-card {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-100);
+      border-radius: 12px;
+      padding: 2rem;
+    }
+    .problem-icon {
+      width: 48px; height: 48px;
+      background: #dbeafe;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .problem-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .problem-card p { color: var(--gray-500); font-size: 0.92rem; }
+
+    /* DIFFERENTIATORS */
+    .diff { background: var(--navy); }
+    .diff h2, .diff .section-label { color: var(--white); }
+    .diff .section-desc { color: rgba(255,255,255,0.6); }
+    .diff-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .diff-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 2rem;
+    }
+    .diff-card .d-num {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--accent);
+      opacity: 0.4;
+      line-height: 1;
+      margin-bottom: 0.8rem;
+    }
+    .diff-card h3 { color: var(--white); font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .diff-card p { color: rgba(255,255,255,0.55); font-size: 0.88rem; line-height: 1.65; }
+
+    /* SERVICES */
+    .services { background: var(--gray-50); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: 14px;
+      padding: 2rem;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .service-card:hover { box-shadow: 0 8px 32px rgba(30,95,194,0.1); transform: translateY(-3px); }
+    .service-icon {
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+    }
+    .service-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.6rem; }
+    .service-card p { color: var(--gray-500); font-size: 0.92rem; line-height: 1.65; }
+
+    /* CATEGORIES */
+    .categories { background: var(--white); }
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+    .cat-item {
+      border: 1.5px solid var(--gray-100);
+      border-radius: 12px;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .cat-item:hover { border-color: var(--blue); box-shadow: 0 4px 16px rgba(30,95,194,0.08); }
+    .cat-item .cat-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0.6rem;
+      width: 36px; height: 36px;
+    }
+    .cat-item span { font-size: 0.85rem; font-weight: 600; color: var(--gray-700); }
+
+    /* PROCESS */
+    .process { background: var(--gray-50); }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+    .step {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: 14px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+    .step-num {
+      width: 40px; height: 40px;
+      background: var(--blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--white);
+      margin: 0 auto 1rem;
+    }
+    .step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .step p { color: var(--gray-500); font-size: 0.88rem; }
+
+    /* MATCHING / LEGAL */
+    .matching { background: var(--white); }
+    .legal { background: var(--gray-50); }
+    .placeholder-box {
+      margin-top: 2.5rem;
+      border: 2px dashed var(--gray-300);
+      border-radius: 12px;
+      padding: 3rem;
+      text-align: center;
+      color: var(--gray-300);
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7rem;
+    }
+
+    /* REGULATORY */
+    .regulatory { background: var(--white); }
+    .reg-card {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-100);
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    .reg-info h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 1rem; }
+    .reg-info p { color: var(--gray-500); font-size: 0.92rem; line-height: 1.75; margin-bottom: 0.8rem; }
+    .reg-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+    .reg-tag {
+      background: #e0effe;
+      color: var(--blue);
+      padding: 0.3rem 0.8rem;
+      border-radius: 100px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+    .reg-steps { display: flex; flex-direction: column; gap: 0.8rem; }
+    .reg-step {
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+      padding: 0.8rem;
+      background: var(--white);
+      border-radius: 8px;
+      border: 1px solid var(--gray-100);
+    }
+    .reg-step-num {
+      width: 24px; height: 24px;
+      background: var(--blue);
+      border-radius: 50%;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .reg-step p { font-size: 0.87rem; color: var(--gray-700); }
+
+    /* COVERAGE */
+    .coverage { background: var(--gray-50); }
+    .coverage-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      margin-top: 3rem;
+    }
+    .coverage-map {
+      background: linear-gradient(135deg, #e0effe, #dbeafe);
+      border-radius: 16px;
+      padding: 3rem;
+      text-align: center;
+      border: 1px solid #bfd7fe;
+    }
+    .coverage-map .map-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+    }
+    .coverage-map p { color: var(--gray-500); font-size: 0.92rem; margin-top: 0.5rem; }
+    .coverage-list { display: flex; flex-direction: column; gap: 1rem; }
+    .coverage-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      padding: 1rem 1.2rem;
+      background: var(--white);
+      border-radius: 10px;
+      border: 1px solid var(--gray-100);
+    }
+    .coverage-item .c-icon {
+      width: 36px; height: 36px;
+      background: #e0effe;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .coverage-item h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.2rem; }
+    .coverage-item p { font-size: 0.87rem; color: var(--gray-500); }
+
+    /* CERTIFICATION */
+    .certification { background: var(--navy); }
+    .certification h2, .certification .section-label { color: var(--white); }
+    .certification .section-desc { color: rgba(255,255,255,0.6); }
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.2rem;
+      margin-top: 3rem;
+    }
+    .cert-item {
+      background: rgba(255,255,255,0.05);
+      border: 1.5px dashed rgba(255,255,255,0.2);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      color: rgba(255,255,255,0.3);
+      font-size: 0.88rem;
+    }
+    .cert-item .cert-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0.8rem;
+      opacity: 0.3;
+    }
+
+    /* PARTNERS */
+    .partners { background: var(--white); }
+    .partners-note { color: var(--gray-500); font-size: 0.88rem; margin-top: 0.5rem; }
+    .partners-placeholder {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 1rem;
+    }
+    .partner-logo-box {
+      background: var(--gray-50);
+      border: 1.5px dashed var(--gray-300);
+      border-radius: 10px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray-300);
+      font-size: 0.8rem;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials { background: var(--gray-50); }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .testimonial-card {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: 14px;
+      padding: 1.8rem;
+    }
+    .testimonial-card .quote-mark {
+      display: flex;
+      margin-bottom: 0.8rem;
+    }
+    .testimonial-card p {
+      color: var(--gray-700);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .author-avatar {
+      width: 38px; height: 38px;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    .author-info strong { display: block; font-size: 0.9rem; font-weight: 700; }
+    .author-info span { font-size: 0.8rem; color: var(--gray-500); }
+
+    /* CTA */
+    .cta-section {
+      background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+      text-align: center;
+      padding: 6rem 5%;
+    }
+    .cta-section h2 { color: var(--white); margin-bottom: 1rem; }
+    .cta-section p { color: rgba(255,255,255,0.65); font-size: 1.05rem; margin-bottom: 2.5rem; }
+    .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* CONTACT */
+    .contact { background: var(--white); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+      margin-top: 3rem;
+    }
+    .contact-info h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; }
+    .contact-item {
+      display: flex;
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
+      align-items: flex-start;
+    }
+    .contact-item-icon {
+      width: 38px; height: 38px;
+      background: #e0effe;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-item p { font-size: 0.85rem; color: var(--gray-500); }
+    .contact-item strong { display: block; font-size: 0.95rem; color: var(--gray-900); }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--gray-700);
+      margin-bottom: 0.4rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid var(--gray-300);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      color: var(--gray-900);
+      transition: border-color 0.2s;
+      background: var(--white);
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { outline: none; border-color: var(--blue); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .submit-btn {
+      background: var(--blue);
+      color: var(--white);
+      border: none;
+      padding: 0.9rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .submit-btn:hover { background: var(--blue-light); }
+
+    footer {
+      background: var(--gray-900);
+      color: rgba(255,255,255,0.5);
+      padding: 2.5rem 5%;
+      text-align: center;
+    }
+    footer .footer-logo {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    footer p { font-size: 0.85rem; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .mission-grid,
+      .coverage-inner,
+      .reg-card,
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">임재혁과 <span>얼굴들</span></div>
+  <ul class="nav-links">
+    <li><a href="#mission">소개</a></li>
+    <li><a href="#services">서비스</a></li>
+    <li><a href="#process">프로세스</a></li>
+    <li><a href="#testimonials">후기</a></li>
+    <li><a href="#contact" class="nav-cta">문의하기</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">
+      <!-- globe icon -->
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      글로벌 의료기기 유통 연결 전문
+    </div>
+    <h1>
+      국내외 의료기기<br />
+      유통의 모든 연결,<br />
+      <em>임재혁과 얼굴들</em>
+    </h1>
+    <p>
+      해외 제조사와 국내 유통사, 그리고 유통사 간의 연결까지 —
+      의료기기 유통의 모든 접점에서 신뢰할 수 있는 파트너십을 만들어드립니다.
+      전국 모든 기업, 전 세계 제조사와 연결합니다.
+    </p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">파트너십 문의</a>
+      <a href="#services" class="btn-secondary">서비스 살펴보기</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <strong>9,999+</strong>
+      <span>거래 성사 건수</span>
+    </div>
+    <div class="stat-item">
+      <strong>9,999+</strong>
+      <span>연결된 유통사 수</span>
+    </div>
+    <div class="stat-item">
+      <strong>전 품목</strong>
+      <span>취급 의료기기 카테고리</span>
+    </div>
+    <div class="stat-item">
+      <strong>전국·전세계</strong>
+      <span>커버리지</span>
+    </div>
+  </div>
+</div>
+
+<!-- MISSION / VISION -->
+<section class="mission" id="mission">
+  <div class="inner">
+    <p class="section-label">미션 & 비전</p>
+    <h2>왜 임재혁과 얼굴들인가</h2>
+    <p class="section-desc">우리는 의료기기 유통의 복잡함을 단순하게 만들고, 신뢰를 기반으로 한 글로벌 생태계를 구축합니다.</p>
+    <div class="mission-grid">
+      <div class="mission-card">
+        <div class="m-icon">
+          <!-- target/crosshair icon -->
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1e5fc2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+        </div>
+        <h3>미션</h3>
+        <p>모든 의료기기 기업이 국경과 규제의 장벽 없이 최적의 파트너를 만날 수 있도록, 신뢰와 전문성을 기반으로 한 연결 인프라를 제공합니다. 우리는 단순한 중개를 넘어, 지속 가능한 파트너십의 토대를 만듭니다.</p>
+      </div>
+      <div class="mission-card">
+        <div class="m-icon">
+          <!-- globe icon -->
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1e5fc2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h3>비전</h3>
+        <p>2030년까지 아시아 최대 의료기기 유통 연결 네트워크가 되는 것을 목표로 합니다. 한국을 거점으로, 제조사와 유통사가 상호 성장할 수 있는 글로벌 의료기기 유통 생태계를 완성합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem" id="problem">
+  <div class="inner">
+    <p class="section-label">해결하는 문제</p>
+    <h2>왜 이 플랫폼이 필요한가요?</h2>
+    <p class="section-desc">의료기기 유통사들이 공통적으로 부딪히는 현실적 장벽들입니다.</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-icon">
+          <!-- search icon -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e5fc2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <h3>검증된 파트너 탐색의 어려움</h3>
+        <p>신뢰할 수 있는 해외 제조사나 국내 유통사를 직접 발굴하는 데는 수개월의 시간과 막대한 비용이 소요됩니다.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">
+          <!-- clipboard/document icon -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e5fc2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg>
+        </div>
+        <h3>복잡한 인허가·규제 대응</h3>
+        <p>식약처 허가, 심평원 등재, 광고 규제 등 의료기기에 특화된 복잡한 규제를 혼자 대응하기는 사실상 불가능합니다.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">
+          <!-- globe icon -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e5fc2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h3>언어·문화 장벽</h3>
+        <p>해외 제조사와의 협상 과정에서 언어 장벽과 비즈니스 관행의 차이로 인해 오해와 분쟁이 빈번하게 발생합니다.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">
+          <!-- handshake/users icon -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e5fc2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>불공정한 계약 구조</h3>
+        <p>정보 비대칭으로 인해 독점 유통권, 가격 조건, MOQ 협상에서 불리한 조건을 수락하는 사례가 많습니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIATORS -->
+<section class="diff" id="diff">
+  <div class="inner">
+    <p class="section-label" style="color: var(--accent);">핵심 차별점</p>
+    <h2>경쟁사와 무엇이 다른가요?</h2>
+    <p class="section-desc">임재혁과 얼굴들만의 강점을 직접 확인하세요.</p>
+    <div class="diff-grid">
+      <div class="diff-card">
+        <div class="d-num">01</div>
+        <h3>검증된 네트워크</h3>
+        <p>직접 구축하고 검증한 9,999개 이상의 유통사·제조사 데이터베이스를 보유합니다. 미검증 리스트가 아닌, 실제 거래 이력이 있는 파트너만 소개합니다.</p>
+      </div>
+      <div class="diff-card">
+        <div class="d-num">02</div>
+        <h3>의료기기 전문성</h3>
+        <p>일반 무역 컨설팅이 아닌, 의료기기에 특화된 인허가·규제·임상 지식을 보유한 전문가 팀이 직접 운영합니다.</p>
+      </div>
+      <div class="diff-card">
+        <div class="d-num">03</div>
+        <h3>계약 성사 보증</h3>
+        <p>단순 소개에서 그치지 않고 계약 체결까지 전 과정을 책임집니다. 연결에 실패하면 비용을 청구하지 않습니다.</p>
+      </div>
+      <div class="diff-card">
+        <div class="d-num">04</div>
+        <h3>사후 관리 시스템</h3>
+        <p>계약 이후에도 분쟁 예방·성과 모니터링·갱신 협상까지 지속적으로 관리합니다. 일회성 소개가 아닌 장기 파트너입니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="inner">
+    <p class="section-label">서비스</p>
+    <h2>제공하는 서비스</h2>
+    <p class="section-desc">의료기기 유통의 시작부터 끝까지, 필요한 모든 것을 지원합니다.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <!-- link icon -->
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        </div>
+        <h3>제조사 ↔ 유통사 연결</h3>
+        <p>해외 의료기기 제조사와 국내 유통사를 연결합니다. 제품군, 목표 시장, 채널 특성을 분석한 맞춤형 매칭으로 성사율을 극대화합니다.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <!-- users/network icon -->
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><circle cx="15" cy="7" r="3"/><path d="M3 20v-2a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v2"/></svg>
+        </div>
+        <h3>유통사 ↔ 유통사 연결</h3>
+        <p>국내 유통사 간, 또는 국내외 유통사 간의 협력 관계를 구축합니다. 공동 유통, 지역 분할, 하도급 파트너십 등 다양한 형태로 연결합니다.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <!-- file-check icon -->
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></svg>
+        </div>
+        <h3>인허가 컨설팅</h3>
+        <p>식약처 의료기기 수입 허가, 심평원 등재, 광고 규제 대응 등 한국 시장 진입에 필요한 모든 인허가 과정을 지원합니다.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <!-- scale/balance icon -->
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="3" x2="12" y2="21"/><path d="M3 9l9-6 9 6"/><path d="M6 12l-3 6h6l-3-6z"/><path d="M18 12l-3 6h6l-3-6z"/></svg>
+        </div>
+        <h3>계약 및 법무 지원</h3>
+        <p>독점·비독점 유통권, 가격 정책, MOQ 조건 등 양측이 만족할 수 있는 계약 구조 설계와 법무 검토를 지원합니다.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <!-- bar-chart icon -->
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+        </div>
+        <h3>시장 진입 전략</h3>
+        <p>국내 의료기기 시장 현황, 경쟁 분석, 채널 전략을 포함한 맞춤형 시장 진입 로드맵을 제공합니다.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <!-- refresh/cycle icon -->
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+        </div>
+        <h3>사후 파트너 관리</h3>
+        <p>계약 체결 이후에도 분쟁 예방, 성과 모니터링, 관계 유지를 위한 지속적인 지원을 제공합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories" id="categories">
+  <div class="inner">
+    <p class="section-label">취급 품목</p>
+    <h2>모든 의료기기 카테고리</h2>
+    <p class="section-desc">특정 분야에 제한되지 않습니다. 의료기기 전 카테고리를 취급합니다.</p>
+    <div class="cat-grid">
+      <div class="cat-item">
+        <div class="cat-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1e5fc2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        </div>
+        <span>진단영상기기</span>
+      </div>
+      <div class="cat-item">
+        <div class="cat-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1e5fc2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
+        </div>
+        <span>체외진단기기</span>
+      </div>
+      <div class="cat-item">
+        <div class="cat-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1e5fc2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <span>심혈관기기</span>
+      </div>
+      <div class="cat-item">
+        <div class="cat-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1e5fc2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        </div>
+        <span>치과기기</span>
+      </div>
+      <div class="cat-item">
+        <div class="cat-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1e5fc2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+        </div>
+        <span>정형외과기기</span>
+      </div>
+      <div class="cat-item">
+        <div class="cat-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1e5fc2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <span>안과기기</span>
+      </div>
+      <div class="cat-item">
+        <div class="cat-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1e5fc2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-2"/><rect x="9" y="1" width="6" height="4" rx="1"/><line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/></svg>
+        </div>
+        <span>수술기기</span>
+      </div>
+      <div class="cat-item">
+        <div class="cat-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1e5fc2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <span>주사·투약기기</span>
+      </div>
+      <div class="cat-item">
+        <div class="cat-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1e5fc2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><line x1="12" y1="6" x2="12" y2="18"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+        </div>
+        <span>소모품·드레싱</span>
+      </div>
+      <div class="cat-item">
+        <div class="cat-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1e5fc2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-6 9 6v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <span>재활·물리치료</span>
+      </div>
+      <div class="cat-item">
+        <div class="cat-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1e5fc2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <span>유전자·정밀진단</span>
+      </div>
+      <div class="cat-item">
+        <div class="cat-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </div>
+        <span>기타 전 품목</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="inner">
+    <p class="section-label">진행 프로세스</p>
+    <h2>어떻게 연결되나요?</h2>
+    <p class="section-desc">체계적인 5단계 프로세스를 통해 확실하고 지속 가능한 연결을 만듭니다.</p>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>초기 상담</h3>
+        <p>제품·목표·조건을 파악하는 무료 1:1 심층 상담을 진행합니다.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>요구사항 분석</h3>
+        <p>양측의 조건과 니즈를 정밀 분석해 매칭 기준을 수립합니다.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>후보 발굴</h3>
+        <p>검증된 네트워크에서 최적 파트너 후보군을 선별·제안합니다.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>미팅 및 협상</h3>
+        <p>양측 미팅을 주선하고 조건 협의·통역·중재를 지원합니다.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <h3>계약 성사 및 사후 관리</h3>
+        <p>계약서 검토, 인허가 준비부터 계약 후 관계 관리까지 책임집니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MATCHING CRITERIA -->
+<section class="matching" id="matching">
+  <div class="inner">
+    <p class="section-label">매칭 기준</p>
+    <h2>어떻게 파트너를 선별하나요?</h2>
+    <p class="section-desc">단순한 조건 매칭이 아닌, 검증된 기준으로 최적의 파트너를 찾습니다.</p>
+    <div class="placeholder-box">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+      매칭 기준 및 프로세스 상세 내용이 이곳에 추가될 예정입니다.
+    </div>
+  </div>
+</section>
+
+<!-- LEGAL -->
+<section class="legal" id="legal">
+  <div class="inner">
+    <p class="section-label">계약 · 법무 지원</p>
+    <h2>계약과 법무도 함께합니다</h2>
+    <p class="section-desc">의료기기 유통 계약의 복잡한 법적 사항을 전문가와 함께 준비합니다.</p>
+    <div class="placeholder-box">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="3" x2="12" y2="21"/><path d="M3 9l9-6 9 6"/><path d="M6 12l-3 6h6l-3-6z"/><path d="M18 12l-3 6h6l-3-6z"/></svg>
+      계약 및 법무 지원 서비스 상세 내용이 이곳에 추가될 예정입니다.
+    </div>
+  </div>
+</section>
+
+<!-- REGULATORY -->
+<section class="regulatory" id="regulatory">
+  <div class="inner">
+    <p class="section-label">규제 · 인허가 지원</p>
+    <h2>한국 의료기기 규제, 함께 대응합니다</h2>
+    <p class="section-desc">심평원 의료기기 유통 및 광고 인허가 서포트 서비스를 제공합니다.</p>
+    <div class="reg-card">
+      <div class="reg-info">
+        <h3>제공 서비스</h3>
+        <p>의료기기의 국내 유통과 광고에는 식약처·심평원의 복잡한 규제가 적용됩니다. 임재혁과 얼굴들은 각 품목의 등급 분류부터 허가 신청, 광고 사전심의까지 전 과정을 전담하여 지원합니다.</p>
+        <p>규제 대응 실패는 막대한 손실로 이어집니다. 검증된 절차와 전문 인력으로 리스크를 최소화합니다.</p>
+        <div class="reg-tags">
+          <span class="reg-tag">식약처 수입 허가</span>
+          <span class="reg-tag">심평원 등재</span>
+          <span class="reg-tag">광고 사전심의</span>
+          <span class="reg-tag">GMP 인증</span>
+          <span class="reg-tag">등급 분류</span>
+          <span class="reg-tag">임상시험 자료</span>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:1rem;">지원 단계</h3>
+        <div class="reg-steps">
+          <div class="reg-step"><div class="reg-step-num">1</div><p>품목 분류 및 허가 전략 수립</p></div>
+          <div class="reg-step"><div class="reg-step-num">2</div><p>기술 문서 준비 및 번역 지원</p></div>
+          <div class="reg-step"><div class="reg-step-num">3</div><p>식약처 허가 신청 및 대관 업무</p></div>
+          <div class="reg-step"><div class="reg-step-num">4</div><p>심평원 급여 등재 신청</p></div>
+          <div class="reg-step"><div class="reg-step-num">5</div><p>광고·마케팅 사전심의 대응</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COVERAGE -->
+<section class="coverage" id="coverage">
+  <div class="inner">
+    <p class="section-label">커버리지</p>
+    <h2>어디까지 연결하나요?</h2>
+    <p class="section-desc">국내 전국 모든 기업과 해외 제조사를 경계 없이 연결합니다.</p>
+    <div class="coverage-inner">
+      <div class="coverage-map">
+        <div class="map-icon">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#1e5fc2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <p>국내 모든 지역 · 전 세계 제조사</p>
+      </div>
+      <div class="coverage-list">
+        <div class="coverage-item">
+          <div class="c-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1e5fc2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-6 9 6v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div>
+            <h4>국내 전국</h4>
+            <p>서울·수도권부터 지방 중소도시까지, 국내 모든 지역의 유통사와 연결합니다.</p>
+          </div>
+        </div>
+        <div class="coverage-item">
+          <div class="c-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1e5fc2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.39a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.03 6.03l1.42-1.41a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <h4>해외 제조사 연결</h4>
+            <p>미국, 유럽, 일본, 중국 등 전 세계 의료기기 제조사와의 연결을 지원합니다.</p>
+          </div>
+        </div>
+        <div class="coverage-item">
+          <div class="c-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1e5fc2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+          </div>
+          <div>
+            <h4>유통사 간 네트워크</h4>
+            <p>국내 유통사끼리, 또는 국내·해외 유통사 간 협력 네트워크도 구축합니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATION -->
+<section class="certification" id="certification">
+  <div class="inner">
+    <p class="section-label" style="color:var(--accent);">인증 및 허가</p>
+    <h2>주요 인증</h2>
+    <p class="section-desc">의료기기 산업에 적합한 인증과 자격을 갖추고 있습니다.</p>
+    <div class="cert-grid">
+      <div class="cert-item">
+        <div class="cert-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+        </div>
+        인증 정보 추가 예정
+      </div>
+      <div class="cert-item">
+        <div class="cert-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        인증 정보 추가 예정
+      </div>
+      <div class="cert-item">
+        <div class="cert-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        인증 정보 추가 예정
+      </div>
+      <div class="cert-item">
+        <div class="cert-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        인증 정보 추가 예정
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="partners" id="partners">
+  <div class="inner">
+    <p class="section-label">파트너사</p>
+    <h2>함께하는 파트너사</h2>
+    <p class="section-desc">국내외 의료기기 선도 기업들과 신뢰 관계를 유지하고 있습니다.</p>
+    <p class="partners-note">* 파트너사 로고는 순차적으로 업데이트됩니다.</p>
+    <div class="partners-placeholder">
+      <div class="partner-logo-box">로고</div>
+      <div class="partner-logo-box">로고</div>
+      <div class="partner-logo-box">로고</div>
+      <div class="partner-logo-box">로고</div>
+      <div class="partner-logo-box">로고</div>
+      <div class="partner-logo-box">로고</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="inner">
+    <p class="section-label">고객 후기</p>
+    <h2>파트너들의 이야기</h2>
+    <p class="section-desc">임재혁과 얼굴들을 경험한 분들의 솔직한 후기입니다.</p>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="quote-mark">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="#1e5fc2" opacity="0.25"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+        </div>
+        <p>와! 일론 머스크가 경악하고 제프 베이조스가 벌벌 떠는 임재혁과 얼굴들!</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">김</div>
+          <div class="author-info">
+            <strong>김정래</strong>
+            <span>파트너사 대표</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote-mark">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="#1e5fc2" opacity="0.25"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+        </div>
+        <p>아노 재혁상노 스타트업와 스고이 데스네</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">김</div>
+          <div class="author-info">
+            <strong>김어진</strong>
+            <span>해외 파트너</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote-mark">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="#1e5fc2" opacity="0.25"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+        </div>
+        <p>못 배운 영포티 사장들 제발 고집 그만 부리고 걍 쓰셈.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">윤</div>
+          <div class="author-info">
+            <strong>윤준영</strong>
+            <span>국내 유통사 임원</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="inner">
+    <h2>지금 바로 연결을 시작하세요</h2>
+    <p>무료 초기 상담을 통해 귀사에 맞는 파트너십 방향을 함께 논의합니다.</p>
+    <div class="cta-buttons">
+      <a href="#contact" class="btn-primary">무료 상담 신청</a>
+      <a href="mailto:contact@jhrfaces.com" class="btn-secondary">이메일 문의</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="inner">
+    <p class="section-label">문의</p>
+    <h2>파트너십을 시작해보세요</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>연락처 정보</h3>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1e5fc2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <strong>이메일</strong>
+            <p>contact@jhrfaces.com</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1e5fc2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.39a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.03 6.03l1.42-1.41a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <strong>전화</strong>
+            <p>02-0000-0000</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1e5fc2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <strong>주소</strong>
+            <p>서울특별시 강남구</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1e5fc2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <strong>운영 시간</strong>
+            <p>평일 09:00 – 18:00 (KST)</p>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>회사명</label>
+            <input type="text" placeholder="(주)회사명" />
+          </div>
+          <div class="form-group">
+            <label>담당자명</label>
+            <input type="text" placeholder="홍길동" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>이메일</label>
+          <input type="email" placeholder="name@company.com" />
+        </div>
+        <div class="form-group">
+          <label>문의 유형</label>
+          <select>
+            <option value="">선택해주세요</option>
+            <option>해외 제조사 → 국내 유통사 연결</option>
+            <option>국내 유통사 → 해외 제품 발굴</option>
+            <option>유통사 ↔ 유통사 연결</option>
+            <option>인허가 컨설팅</option>
+            <option>계약·법무 지원</option>
+            <option>기타 문의</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>문의 내용</label>
+          <textarea placeholder="취급 제품군, 목표 시장, 현재 상황 등을 자유롭게 적어주세요."></textarea>
+        </div>
+        <button type="submit" class="submit-btn">문의 보내기</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">임재혁과 얼굴들</div>
+  <p>© 2024 임재혁과 얼굴들. All rights reserved.</p>
+</footer>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
